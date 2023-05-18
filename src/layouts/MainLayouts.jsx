@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../pages/shared/Header/Header";
+import Footer from "../pages/shared/Footer";
 
 
 const MainLayouts = () => {
@@ -7,6 +8,7 @@ const MainLayouts = () => {
         <div>
             <Header></Header>
             <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
