@@ -1,5 +1,6 @@
 import Rating from "react-rating";
 import { FaStar, FaStarHalf } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CategoryCard = ({ item }) => {
     const { name, picture, price, rating, _id } = item;
@@ -17,7 +18,7 @@ const CategoryCard = ({ item }) => {
                     readonly
                 /> {rating}</p>
                 <div className="card-actions">
-                    <button className="py-3 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-lg uppercase px-4 text-white">more details</button>
+                    <Link to={`/product/${_id}`} className="py-3 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-lg uppercase px-4 text-white">more details</Link>
                 </div>
             </div>
         </div>
