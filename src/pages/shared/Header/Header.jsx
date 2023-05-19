@@ -1,13 +1,29 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const name = user?.displayName;
+
+    const handleLogOut = () => {
+        logOut()
+            .then().catch(error => {
+                console.log(error.message);
+            })
+    }
+
     const navItems = <>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/'>All Toys</Link></li>
-                        <li><Link to='/'>My Toys</Link></li>
-                        <li><Link to='/'>Add A Toys</Link></li>
-                        <li><Link to='/'>Blogs</Link></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/'>All Toys</Link></li>
+        {
+            user ? <>
+                <li><Link to='/'>My Toys</Link></li>
+                <li><Link to='/'>Add A Toys</Link></li>
+            </> : ""
+        }
+        <li><Link to='/'>Blogs</Link></li>
     </>
 
     return (
@@ -21,7 +37,7 @@ const Header = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">ToyCars</a>
+                <a className="font-bold text-xl">Toy<span className="text-red-500">Cars</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,7 +45,13 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">user</a>
+                {
+                    user ? <>
+                        <img className="h-12 w-12 rounded-full" title={name} src={user?.photoURL} alt="" />
+                        <button onClick={handleLogOut} className="ml-4 py-2 px-4 rounded-lg bg-red-500 hover:bg-red-800 font-bold text-lg text-white">Log Out</button>
+                    </>
+                        : <Link className="py-2 px-4 rounded-lg bg-red-500 hover:bg-red-800 font-bold text-lg text-white" to='/login'>Login</Link>
+                }
             </div>
         </div>
     );
