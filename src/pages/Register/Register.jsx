@@ -21,7 +21,6 @@ const Register = () => {
                     console.log(error.message);
                 })
             console.log(user)
-            event.form.reset()
         })
         .catch(error=>{
             console.log(error.message);
