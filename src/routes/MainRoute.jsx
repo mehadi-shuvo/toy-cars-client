@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
+import AllToys from "../pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
             {
                 path: 'product/:id',
                 element: <ProductDetails></ProductDetails>,
-                loader: ({params})=> fetch(`http://localhost:3000/category/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:3000/toys/${params.id}`)
+            },
+            {
+                path: 'all-toys',
+                element: <AllToys></AllToys>
             }
 
         ]
