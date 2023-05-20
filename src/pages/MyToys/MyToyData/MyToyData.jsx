@@ -25,7 +25,7 @@ const MyToyData = ({ toy }) => {
             </td>
 
             <td className="flex gap-2 justify-end items-center border-none">
-                <Link to={`/product/${_id}`} className="py-2 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-base uppercase px-4 text-white">update</Link>
+                <Link to={`/update-toy/${_id}`} className="py-2 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-base uppercase px-4 text-white">update</Link>
                 <button className="py-2 rounded-lg bg-slate-800 hover:bg-slate-900 font-semibold text-base uppercase px-4 text-white">Delete</button>
             </td>
         </tr>
