@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const ToyData = ({ toy }) => {
+const MyToyData = ({ toy }) => {
     const { _id, picture, name, subcategory, price, available_quantity, seller_name } = toy;
     return (
         <tr className="border-b">
@@ -24,11 +24,12 @@ const ToyData = ({ toy }) => {
                 <p>{seller_name}</p>
             </td>
 
-            <td className="flex justify-end items-center border-none">
-                <Link to={`/product/${_id}`} className="py-3 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-lg uppercase px-4 text-white">more details</Link>
+            <td className="flex gap-2 justify-end items-center border-none">
+                <Link to={`/product/${_id}`} className="py-2 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-base uppercase px-4 text-white">update</Link>
+                <button className="py-2 rounded-lg bg-slate-800 hover:bg-slate-900 font-semibold text-base uppercase px-4 text-white">Delete</button>
             </td>
         </tr>
     );
 };
 
-export default ToyData;
+export default MyToyData;
