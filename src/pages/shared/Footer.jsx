@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 const Footer = () => {
     return (
         <footer className="p-10 bg-slate-800 text-white">
-            <div className="grid grid-cols-4">
+            <div className="grid md:grid-cols-4 gap-5">
                 <div>
                     <p className="text-2xl font-bold">Toy<span className="text-red-500">Cars</span></p>
                     <p>ToyCar Industries Ltd.<br />Providing reliable toy since 2006</p>

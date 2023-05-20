@@ -3,13 +3,13 @@
 const Gallery = () => {
     return (
         <div className="my-20">
-            <h4 className="text-center text-red-500 font-bold text-5xl mb-5">Our Gallery</h4>
-            <div className="grid md:grid-cols-3 h-[600px]">
+            <h4 className="text-center font-bold text-5xl mb-5">Our <span className="text-red-500">Gallery</span></h4>
+            <div className="grid md:grid-cols-3 md:h-[600px]">
                 <div className="grid grid-cols-2">
                     <div className="h-1/2">
                         <img className="h-full" src="https://i.postimg.cc/m2fpwwVW/jed-owen-n-Hnt-I-z-Oh-Y4-unsplash.jpg
 " alt="" />
-                        <img className="h-full" src="https://i.postimg.cc/02DFR3rN/isaac-martin-C09-NUA6a-M2o-unsplash.jpg
+                        <img className="h-full w-full" src="https://i.postimg.cc/02DFR3rN/isaac-martin-C09-NUA6a-M2o-unsplash.jpg
 " alt="" />
                     </div>
                     <div className="h-1/2">
@@ -19,9 +19,11 @@ const Gallery = () => {
 " alt="" />
                     </div>
                 </div>
+
                 <div>
                     <img className="h-full" src="https://i.postimg.cc/wj3WxGjJ/mourizal-zativa-YGEl-TTr-Aa-HM-unsplash.jpg" alt="" />
                 </div>
+
                 <div className="grid grid-cols-2">
                     <div className="h-1/2">
                         <img className="h-full" src="https://i.postimg.cc/D0sjhJvN/gabriel-vasiliu-t9-UQrw-Drlp-A-unsplash.jpg" alt="" />
