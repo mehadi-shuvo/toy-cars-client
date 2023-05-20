@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import MyToyData from "./MyToyData/MyToyData";
+import Swal from "sweetalert2";
 
 
 const MyToys = () => {
@@ -11,6 +12,28 @@ const MyToys = () => {
         .then(res=>res.json())
         .then(data=> setToys(data))
     },[])
+
+    const handleDelete = id =>{
+        const process = confirm('Do you want to delete this toy?')
+        const url = `http://localhost:3000/toys/${id}`;
+        if(process){
+            fetch(url,{
+                method: 'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.deletedCount>0){
+                    const remainingToy = toys.filter(toy=> toy._id !== id)
+                    setToys(remainingToy);
+                    Swal.fire({
+                        title: 'Deleted successfully',
+                        icon: 'error',
+                      })
+                }
+            })
+        }
+
+    }
     return (
         <div className="w-4/5 mx-auto">
             <div>
@@ -28,6 +51,7 @@ const MyToys = () => {
                             {
                                 toys.map(toy => <MyToyData key={toy._id}
                                     toy={toy}
+                                    handleDelete={handleDelete}
                                 ></MyToyData>)
                             }
                         </tbody>

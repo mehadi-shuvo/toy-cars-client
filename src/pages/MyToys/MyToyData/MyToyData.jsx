@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
 
-const MyToyData = ({ toy }) => {
+const MyToyData = ({ toy, handleDelete }) => {
     const { _id, picture, name, subcategory, price, available_quantity, seller_name } = toy;
+
+
     return (
         <tr className="border-b">
             <td className="border-none">
@@ -26,7 +28,7 @@ const MyToyData = ({ toy }) => {
 
             <td className="flex gap-2 justify-end items-center border-none">
                 <Link to={`/update-toy/${_id}`} className="py-2 rounded-lg bg-red-500 hover:bg-red-800 font-semibold text-base uppercase px-4 text-white">update</Link>
-                <button className="py-2 rounded-lg bg-slate-800 hover:bg-slate-900 font-semibold text-base uppercase px-4 text-white">Delete</button>
+                <button onClick={()=>handleDelete(_id)} className="py-2 rounded-lg bg-slate-800 hover:bg-slate-900 font-semibold text-base uppercase px-4 text-white">Delete</button>
             </td>
         </tr>
     );
