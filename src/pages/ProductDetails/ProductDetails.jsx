@@ -1,9 +1,11 @@
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 const ProductDetails = () => {
+    useTitle("Toy Details");
     const product = useLoaderData()
     const {name,picture, price,rating,seller_name,seller_email,available_quantity,details} = product
     return (

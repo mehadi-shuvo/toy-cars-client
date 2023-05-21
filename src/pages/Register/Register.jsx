@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 
 const Register = () => {
+    useTitle('Register');
     const navigate = useNavigate()
     const {createUser, addNameAndPhoto} = useContext(AuthContext);
     const [errorText, setErrorText]=useState('')

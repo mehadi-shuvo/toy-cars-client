@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import ToyData from "./ToyData";
+import useTitle from "../../hooks/useTitle";
 
 
 const AllToys = () => {
+    useTitle('All Toys');
     const [toys, setToys] = useState([]);
     const [showFullData, setShowFullData] = useState(false);
 
