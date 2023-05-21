@@ -8,20 +8,21 @@ const ToyCategory = () => {
     const [jeepCars, setJeepCars] = useState([])
     const [truck, setTruck] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3000/category-toy/racecar')
+        fetch('https://toy-cars-server-six.vercel.app/category-toy/racecar')
             .then(res => res.json())
             .then(data => setRaceCar(data))
     }, []);
-    useEffect(() => {
-        fetch('http://localhost:3000/category-toy/jeepcar')
-            .then(res => res.json())
-            .then(data => setJeepCars(data))
-    }, []);
-    useEffect(() => {
-        fetch('http://localhost:3000/category-toy/truckcar')
-            .then(res => res.json())
-            .then(data => setTruck(data))
-    }, []);
+    const handleJeep = category =>{
+        console.log(category);
+        fetch(`https://toy-cars-server-six.vercel.app/category-toy/${category}`)
+        .then(res => res.json())
+        .then(data => setJeepCars(data))
+    }
+    const handleTuck = category =>{
+        fetch(`https://toy-cars-server-six.vercel.app/category-toy/${category}`)
+        .then(res => res.json())
+        .then(data => setTruck(data))
+    }
 
     return (
         <div className="w-4/5 mx-auto mb-20">
@@ -30,8 +31,8 @@ const ToyCategory = () => {
                 <TabList>
                     <div  className="flex gap-3 justify-center text-white font-semibold mb-5">
                         <Tab className='py-2 px-4 bg-red-500 rounded-lg cursor-pointer hover:bg-red-700' >Race Car</Tab>
-                        <Tab className='py-2 px-4 bg-red-500 rounded-lg cursor-pointer hover:bg-red-700' >Jeep Car</Tab>
-                        <Tab className='py-2 px-4 bg-red-500 rounded-lg cursor-pointer hover:bg-red-700' >Truck</Tab>
+                        <Tab onClick={()=>handleJeep('jeepcar')} className='py-2 px-4 bg-red-500 rounded-lg cursor-pointer hover:bg-red-700' >Jeep Car</Tab>
+                        <Tab onClick={()=>handleTuck('truckcar')} className='py-2 px-4 bg-red-500 rounded-lg cursor-pointer hover:bg-red-700' >Truck</Tab>
                     </div>
                 </TabList>
 

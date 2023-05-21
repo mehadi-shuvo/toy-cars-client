@@ -10,14 +10,14 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        fetch(`http://localhost:3000/my-toys?email=${user.email}&&sort=`)
+        fetch(`https://toy-cars-server-six.vercel.app/my-toys?email=${user.email}&&sort=`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
 
     const handleDelete = id => {
         const process = confirm('Do you want to delete this toy?')
-        const url = `http://localhost:3000/toys/${id}`;
+        const url = `https://toy-cars-server-six.vercel.app/toys/${id}`;
         if (process) {
             fetch(url, {
                 method: 'DELETE'
@@ -38,12 +38,12 @@ const MyToys = () => {
     }
 
     const handleSortLow = () => {
-        fetch(`http://localhost:3000/my-toys?email=${user.email}&&sort=low`)
+        fetch(`https://toy-cars-server-six.vercel.app/my-toys?email=${user.email}&&sort=low`)
             .then(res => res.json())
             .then(data => setToys(data))
     }
     const handleSortHigh = () => {
-        fetch(`http://localhost:3000/my-toys?email=${user.email}&&sort=high`)
+        fetch(`https://toy-cars-server-six.vercel.app/my-toys?email=${user.email}&&sort=high`)
             .then(res => res.json())
             .then(data => setToys(data))
     }

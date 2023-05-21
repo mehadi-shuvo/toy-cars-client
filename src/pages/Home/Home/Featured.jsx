@@ -14,7 +14,7 @@ const Featured = () => {
             <div className="grid md:grid-cols-3 w-4/5 mx-auto gap-5">
                 <div data-aos="zoom-in"
                     data-aos-easing="linear"
-                    data-aos-duration="500"
+                    data-aos-duration="1500"
                     className="card image-full">
                     <figure><img src='https://i.postimg.cc/m2fpwwVW/jed-owen-n-Hnt-I-z-Oh-Y4-unsplash.jpg' className="opacity-100" alt="Shoes" /></figure>
                     <div className="p-8 text-white z-20 flex flex-col justify-end">
@@ -26,7 +26,7 @@ const Featured = () => {
                 </div>
                 <div data-aos="zoom-in"
                     data-aos-easing="linear"
-                    data-aos-duration="500"
+                    data-aos-duration="1500"
                     className="card image-full">
                     <figure><img src='https://i.postimg.cc/Bn3yqg1B/gabriel-vasiliu-b-Ha-LQz5ko-Us-unsplash.jpg' className="opacity-100" alt="Shoes" /></figure>
                     <div className="p-8 text-white z-20 flex flex-col justify-end">
@@ -38,7 +38,7 @@ const Featured = () => {
                 </div>
                 <div data-aos="zoom-in"
                     data-aos-easing="linear"
-                    data-aos-duration="500"
+                    data-aos-duration="1500"
                     className="card image-full">
                     <figure><img src='https://i.postimg.cc/J7BdZgNQ/gabriel-vasiliu-Niu-BAomdr-T4-unsplash.jpg' className="opacity-100" alt="Shoes" /></figure>
                     <div className="p-8 text-white z-20 flex flex-col justify-end">

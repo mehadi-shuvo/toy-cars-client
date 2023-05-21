@@ -10,9 +10,11 @@ const AllToys = () => {
 
     useEffect(() => {
         const limit = showFullData ? null : 20;
-        fetch(`http://localhost:3000/toys?limit=${limit}`)
+        fetch(`https://toy-cars-server-six.vercel.app/toys?limit=${limit}`)
             .then(res => res.json())
-            .then(data => setToys(data))
+            .then(data => {
+                setToys(data)
+            })
 
     }, [showFullData]);
 
@@ -22,7 +24,7 @@ const AllToys = () => {
     const handleSearch = event =>{
         event.preventDefault()
         const search = event.target.search.value;
-        fetch(`http://localhost:3000/search?name=${search}`)
+        fetch(`https://toy-cars-server-six.vercel.app/search?name=${search}`)
         .then(res=>res.json())
         .then(data=>setToys(data))
         .catch(error=>console.log(error))

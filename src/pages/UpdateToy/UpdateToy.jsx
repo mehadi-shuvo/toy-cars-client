@@ -17,7 +17,7 @@ const UpdateToy = () => {
         const available_quantity = parseFloat(form.available_quantity.value);
         const details = form.details.value;
         const updateToy = {price, available_quantity, details};
-        fetch(`http://localhost:3000/update/${_id}`,{
+        fetch(`https://toy-cars-server-six.vercel.app/update/${_id}`,{
             method: "PUT",
             headers:{
                 'content-type' : 'application/json'
