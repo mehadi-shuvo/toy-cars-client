@@ -9,7 +9,7 @@ const AllToys = () => {
     const [showFullData, setShowFullData] = useState(false);
 
     useEffect(() => {
-        const limit = showFullData ? null : 3;
+        const limit = showFullData ? null : 20;
         fetch(`http://localhost:3000/toys?limit=${limit}`)
             .then(res => res.json())
             .then(data => setToys(data))
